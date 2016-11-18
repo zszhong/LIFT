@@ -7,7 +7,7 @@
 export OMP_NUM_THREADS=1
 
 # Cuda Settings
-export CUDA_VISIBLE_DEVICES=0
+export CUDA_VISIBLE_DEVICES=2
 
 # Theano Flags 
 export THEANO_FLAGS="device=gpu0,${THEANO_FLAGS}"
@@ -16,7 +16,7 @@ export THEANO_FLAGS="device=gpu0,${THEANO_FLAGS}"
 # LIFT code settings
 
 # Number of keypoints
-_LIFT_NUM_KEYPOINT=1000
+_LIFT_NUM_KEYPOINT=50000
 
 # Whether to save debug image for keypoints
 _LIFT_SAVE_PNG=1
@@ -31,7 +31,7 @@ export _LIFT_BASE_PATH="$(pwd)"
 _LIFT_PYTHON_CODE_PATH="${_LIFT_BASE_PATH}/python-code"
 
 # Test image and model settings
-_LIFT_TEST_IMG_NAME="img1"
+_LIFT_TEST_IMG_NAME="img2"
 _LIFT_TEST_IMG="${_LIFT_BASE_PATH}/data/testimg/${_LIFT_TEST_IMG_NAME}.jpg"
 _LIFT_TEST_CONFIG="${_LIFT_BASE_PATH}/models/configs/picc-finetune-nopair.config"
 _LIFT_MODEL_DIR="${_LIFT_BASE_PATH}/models/picc-best/"
@@ -40,7 +40,8 @@ _LIFT_MODEL_DIR="${_LIFT_BASE_PATH}/models/picc-best/"
 _LIFT_RES_DIR="${_LIFT_BASE_PATH}/results"
 _LIFT_KP_FILE_NAME="${_LIFT_RES_DIR}/${_LIFT_TEST_IMG_NAME}_kp.txt"
 _LIFT_ORI_FILE_NAME="${_LIFT_RES_DIR}/${_LIFT_TEST_IMG_NAME}_ori.txt"
-_LIFT_DESC_FILE_NAME="${_LIFT_RES_DIR}/${_LIFT_TEST_IMG_NAME}_desc.h5"
+# _LIFT_DESC_FILE_NAME="${_LIFT_RES_DIR}/${_LIFT_TEST_IMG_NAME}_desc.h5"
+_LIFT_DESC_FILE_NAME="${_LIFT_RES_DIR}/${_LIFT_TEST_IMG_NAME}.key"
 
 
 (cd $_LIFT_PYTHON_CODE_PATH; \

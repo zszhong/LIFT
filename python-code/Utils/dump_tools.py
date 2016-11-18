@@ -35,6 +35,7 @@ import gzip
 import pickle
 
 import h5py
+import numpy as np
 
 
 def savepklz(data_to_dump, dump_file_full_name, force_run=False):
