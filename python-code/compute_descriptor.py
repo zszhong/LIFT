@@ -40,7 +40,7 @@ import numpy as np
 
 from Utils.custom_types import paramGroup, paramStruct, pathConfig
 from Utils.dataset_tools import test as data_module
-from Utils.dump_tools import loadh5, saveh5
+from Utils.dump_tools import loadh5, saveh5, savetxt
 from Utils.solvers import Test
 
 # ------------------------------------------
@@ -137,7 +137,8 @@ if __name__ == '__main__':
     save_dict['keypoints'] = test_data_in.coords
     save_dict['descriptors'] = descs
 
-    saveh5(save_dict, output_file)
+    # saveh5(save_dict, output_file)
+    savetxt(save_dict, output_file)
 
 
 #

@@ -58,6 +58,14 @@ def loadpklz(dump_file_full_name, force_run=False):
 
     return dump_data
 
+def savetxt(dict_to_dump, dump_file_full_name):
+    '''saves a dictionary as txt file'''
+    keys = dict_to_dump['keypoints']
+    desc = dict_to_dump['descriptors']
+    data = np.concatenate((keys, desc), axis=1)
+    with open(dump_file_full_name, 'a') as f:
+        f.write('{}\n'.format(data.shape[0]))
+        np.savetxt(f, data, fmt='%.6f', delimiter=' ', newline='\n')
 
 def saveh5(dict_to_dump, dump_file_full_name):
     ''' Saves a dictionary as h5 file '''
