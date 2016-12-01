@@ -63,7 +63,8 @@ def savetxt(dict_to_dump, dump_file_full_name):
     '''saves a dictionary as txt file'''
     keys = dict_to_dump['keypoints']
     desc = dict_to_dump['descriptors']
-    data = np.concatenate((keys[:,1],keys[:,0],keys[:,2:], desc), axis=1)
+    keys[:, [0, 1]] = keys[:, [1, 0]]
+    data = np.concatenate((keys, desc), axis=1)
     with open(dump_file_full_name, 'a') as f:
         f.write('{}\n'.format(data.shape[0]))
         np.savetxt(f, data, fmt='%.6f', delimiter=' ', newline='\n')
